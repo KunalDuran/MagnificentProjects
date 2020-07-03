@@ -5,10 +5,10 @@ from whatsapp_analysis import analyze
 
 app = Flask(__name__)
 
-app.config['SECRET_KEY'] = 'Somethingsecret'
+app.config['SECRET_KEY'] = 'alskdfhgljxcl13513'
 
 
-@app.route('/whatsapp', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def whatsapp_upload():
     form = WhatsappUpload()
     if form.validate_on_submit():
