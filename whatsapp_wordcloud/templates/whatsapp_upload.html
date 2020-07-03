@@ -1,0 +1,39 @@
+<html>
+
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
+
+
+<body>
+<style>
+	body {
+	padding: 25px
+	}
+</style>
+
+        <form method="POST" action="" enctype="multipart/form-data">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Upload your Whatsapp chat file Here</legend>
+                <h5 class="">Steps to download chat</h5>
+                    <ol>Open whatapp and go to Chat you want to export</ol>
+                    <ol>Go to Options in Top right corner and select more</ol>
+                    <ol>Click Export chat</ol>
+                    <ol>Select without media</ol>
+                    <ol>Save to drive and download</ol><hr>
+                <div class="form-group">
+                    {{ form.chat.label() }}
+                    {{ form.chat(class="form-control-file") }}
+                    {% if form.chat.errors %}
+                        {% for error in form.chat.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </fieldset>
+            <div class="form-group">
+                {{ form.submit(class="btn btn-outline-info") }}
+            </div>
+        </form>
+
+</body>
+</html>

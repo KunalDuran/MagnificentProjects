@@ -1,0 +1,6 @@
+flask
+wordcloud
+nltk
+pandas
+matplotlib
+Flask-WTF

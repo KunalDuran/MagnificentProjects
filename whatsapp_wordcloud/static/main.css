@@ -1,0 +1,25 @@
+ .form-group{
+ margin-bottom:1rem}
+
+.form-group{
+    display:-ms-flexbox;
+    display:flex;
+    -ms-flex:0 0 auto;
+    flex:0 0 auto;
+    -ms-flex-flow:row wrap;
+    flex-flow:row wrap;
+    -ms-flex-align:center;
+    align-items:center;
+    margin-bottom:0
+    }
+ 
+ .mb-4,.my-4{
+    margin-bottom:1.5rem!important}
+
+ a.text-danger:focus,a.text-danger:hover{color:#a71d2a!important}
+ 
+ 
+
+
+
+
