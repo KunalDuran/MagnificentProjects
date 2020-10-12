@@ -6,15 +6,16 @@ import matplotlib.pyplot as plt
 import os
 
 
-def analyze():
+def analyze(filename):
     # reading the uploaded file
-    uploaded = os.listdir('uploaded_files')[0]
-    file = open(os.path.join("uploaded_files",uploaded), encoding='utf-8')
+    # uploaded = os.listdir('uploaded_files')[0]
+    file = open(os.path.join("uploaded_files",filename), encoding='utf-8')
     file.readline()
     
 
     # new clean file (csv version) for reading in pandas
-    newfile = open('cleaned.txt', 'w', encoding='utf-8')
+    newfile_name = 'cleaned_'+filename
+    newfile = open(newfile_name, 'w', encoding='utf-8')
 
 
     # converting txt file to usable csv format with help of regex
@@ -38,7 +39,7 @@ def analyze():
 
 
     # Reading converted file (txt to csv) 
-    df = pd.read_csv(r'cleaned.txt',
+    df = pd.read_csv(newfile_name,
                      names=['date','time','sender','message'],skiprows=1, encoding='utf-8')
 
 
@@ -71,4 +72,7 @@ def analyze():
     plt.axis("off")
     plt.tight_layout(pad = 0)
     #plt.show()
-    plt.savefig('static/output_files/whatsapp.jpg')
+    imagename = os.path.splitext(filename)[0]
+    imagename = imagename+'_image.jpg'
+    # print(imagename) 
+    plt.savefig('static/output_files/'+imagename)
